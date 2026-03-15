@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="8dp">
+                <Textview android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Toplam Gelir" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvToplamGelir" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 TL" android:textColor="#2E7D32" android:textStyle="bold" android:textSize="16sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="8dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Toplam Gider" android:textSize="12sp"/>
+                <TextView android:id="@+id/tvToplamGider" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 TL" android:textColor="#C62828" android:textStyle="bold" android:textSize="16sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
+            <EditText android:id="@+id/etMiktar" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Tutar" android:inputType="numberDecimal"/>
+            <EditText android:id="@+id/etAciklama" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Açıklama"/>
+            <RadioGroup android:id="@+id/rgIslemTuru" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <RadioButton android:id="@+id/rbGelir" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gelir" android:checked="true"/>
+                <RadioButton android:id="@+id/rbGider" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gider"/>
+            </RadioGroup>
+            <Button android:id="@+id/btnKaydet" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="KAYDET" android:backgroundTint="#2196F3"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="İşlem Geçmişi" android:textStyle="bold" android:layout_marginBottom="8dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvIslemler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
